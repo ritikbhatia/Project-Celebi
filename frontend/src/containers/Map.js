@@ -1,46 +1,90 @@
-import React from 'react'
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+import ReactDOM from "react-dom";
+import React from "react";
+import './Map.css';
+import { GoogleMap, StandaloneSearchBox, Marker } from "@react-google-maps/api";
 
-const containerStyle = {
-  width: '100%',
-  height: '100vh'
-};
+let markerArray = [];
+class Map extends React.Component {
+  state = {
+    currentLocation: { lat: 0, lng: 0 },
+    markers: [],
+    bounds: null
+  };
 
-const center = {
-  lat: -3.745,
-  lng: -38.523
-};
+  onMapLoad = map => {
+    navigator?.geolocation.getCurrentPosition(
+      ({ coords: { latitude: lat, longitude: lng } }) => {
+        const pos = { lat, lng };
+        this.setState({ currentLocation: pos });
+      }
+    );
+    google.maps.event.addListener(map, "bounds_changed", () => {
+      console.log(map.getBounds());
+      this.setState({ bounds: map.getBounds() });
+    });
+  };
 
-function Map() {
-  const { isLoaded } = useJsApiLoader({
-    id: 'google-map-script',
-    googleMapsApiKey: "AIzaSyBv8IZVkta7CgAa3nU3pwhtAklZ14tqNPc"
-  })
+  onSBLoad = ref => {
+    this.searchBox = ref;
+  };
 
-  const [map, setMap] = React.useState(null)
+  onPlacesChanged = () => {
+    markerArray = [];
+    let results = this.searchBox.getPlaces();
+    for (let i = 0; i < results.length; i++) {
+      let place = results[i].geometry.location;
+      markerArray.push(place);
+    }
+    this.setState({ markers: markerArray });
+    console.log(markerArray);
+  };
 
-  const onLoad = React.useCallback(function callback(map) {
-    const bounds = new window.google.maps.LatLngBounds();
-    map.fitBounds(bounds);
-    setMap(map)
-  }, [])
-
-  const onUnmount = React.useCallback(function callback(map) {
-    setMap(null)
-  }, [])
-
-  return isLoaded ? (
-      <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={center}
-        zoom={10}
-        onLoad={onLoad}
-        onUnmount={onUnmount}
-      >
-        { /* Child components, such as markers, info windows, etc. */ }
-        <></>
-      </GoogleMap>
-  ) : <></>
+  render() {
+    return (
+      <div>
+        <div id="searchbox">
+          <StandaloneSearchBox
+            onLoad={this.onSBLoad}
+            onPlacesChanged={this.onPlacesChanged}
+            bounds={this.state.bounds}
+          >
+            <input
+              type="text"
+              placeholder="Customized your placeholder"
+              style={{
+                boxSizing: `border-box`,
+                border: `1px solid transparent`,
+                width: `240px`,
+                height: `32px`,
+                padding: `0 12px`,
+                borderRadius: `3px`,
+                boxShadow: `0 2px 6px rgba(0, 0, 0, 0.3)`,
+                fontSize: `14px`,
+                outline: `none`,
+                textOverflow: `ellipses`,
+                position: "absolute",
+                left: "50%",
+                marginLeft: "-120px"
+              }}
+            />
+          </StandaloneSearchBox>
+        </div>
+        <br />
+        <div>
+          <GoogleMap
+            center={this.state.currentLocation}
+            zoom={10}
+            onLoad={map => this.onMapLoad(map)}
+            mapContainerStyle={{ height: "400px", width: "800px" }}
+          >
+            {this.state.markers.map((mark, index) => (
+              <Marker key={index} position={mark} />
+            ))}
+          </GoogleMap>
+        </div>
+      </div>
+    );
+  }
 }
 
-export default React.memo(Map)
+export default Map;
