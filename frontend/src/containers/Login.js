@@ -39,7 +39,7 @@ class Login extends React.Component {
                                 <Col>
                                     <p className="login__text">
                                     Welcome to Project Celebi<br/>
-                                    <span className="blue__text">Let's make the world a livable place! </span>
+                                    <span className="blue__text">Enabling sustainable communities for a brighter future. </span>
                                     </p>
                                 </Col>
                                 <Col>
