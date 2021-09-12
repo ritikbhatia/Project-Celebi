@@ -33,4 +33,4 @@ if __name__ == "__main__":
     # example_api.register_endpoints(app, stores)
 
     # start flask app
-    app.run(host='0.0.0.0', port=5555, debug=config["IS_DEBUG"])
+    app.run(host='0.0.0.0', port=3000, debug=config["IS_DEBUG"])

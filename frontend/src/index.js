@@ -18,6 +18,8 @@ import promiseMiddleware from "redux-promise-middleware"
 import reducer from "./redux/reducers"
 import App from "./containers/App"
 import './index.css';
+import { BrowserRouter, Route, Switch } from "react-router-dom"
+import Home from "./containers/Home"
 
 // configure fontawesome
 const icons = [faTrashAlt, faEdit, faCog, faSyncAlt, faChevronDown, faChevronRight, faDownload, faCheck, faTimes]
@@ -31,7 +33,12 @@ const store = createStore(reducer, composeEnhancers(applyMiddleware(promiseMiddl
 
 render(
     <Provider store={store}>
-        <App />
+        <BrowserRouter>
+            <App />
+            <Switch>
+                <Route exact path='/home' component={Home} />
+            </Switch>
+        </BrowserRouter>
     </Provider>,
 
     document.getElementById("root")

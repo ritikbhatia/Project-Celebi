@@ -140,7 +140,7 @@ python runner.py
 
 (and replace `python` with whatever you use as binary)
 
-- This'll serve the Flask app via: http://localhost:5555
+- This'll serve the Flask app via: http://localhost:3000
 
 **Frontend Development**
 
