@@ -1,21 +1,31 @@
 {
-  "name": "example-app",
-  "version": "1.0.0",
-  "description": "Example React Application",
-  "scripts": {
-    "test": "",
-    "build": "webpack -p",
-    "lint": "eslint \"**/*.{js,mjs}\"",
-    "format": "eslint --fix \"**/*.{js,mjs}\"",
-    "hot-client": "webpack -d --watch",
-    "clean": "rm -rf static/* && rm -rf templates/"
+  "name": "reddit-redesign-clone",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.3",
+    "@fortawesome/fontawesome-svg-core": "^1.2.17",
+    "@fortawesome/free-solid-svg-icons": "^5.8.1",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "jsx": "^0.9.89",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.27",
+    "npm": "^6.9.0",
+    "plotly.js": "^1.47.4",
+    "plotly.js-basic-dist": "^1.47.4",
+    "react-plotly.js": "^2.3.0",
+    "react-redux": "^7.1.1",
+    "react-router": "^5.0.1",
+    "react-s-alert": "^1.4.1",
+    "redux": "^4.0.4",
+    "redux-promise-middleware": "^5.1.1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:ilfrich/flask-react-template.git"
-  },
-  "author": "Peter Ilfrich",
-  "license": "Apache-2.0",
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/node": "^7.2.2",
@@ -42,24 +52,27 @@
     "webpack": "^4.29.3",
     "webpack-cli": "^3.2.3"
   },
-  "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.17",
-    "@fortawesome/free-solid-svg-icons": "^5.8.1",
-    "@fortawesome/react-fontawesome": "^0.1.4",
-    "jsx": "^0.9.89",
-    "moment": "^2.24.0",
-    "moment-timezone": "^0.5.27",
-    "npm": "^6.9.0",
-    "plotly.js": "^1.47.4",
-    "plotly.js-basic-dist": "^1.47.4",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-plotly.js": "^2.3.0",
-    "react-redux": "^7.1.1",
-    "react-router": "^5.0.1",
-    "react-router-dom": "^5.0.1",
-    "react-s-alert": "^1.4.1",
-    "redux": "^4.0.4",
-    "redux-promise-middleware": "^5.1.1"
+  "scripts": {
+    "test": "",
+    "build": "webpack -p",
+    "lint": "eslint \"**/*.{js,mjs}\"",
+    "format": "eslint --fix \"**/*.{js,mjs}\"",
+    "hot-client": "webpack -d --watch",
+    "clean": "rm -rf static/* && rm -rf templates/"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

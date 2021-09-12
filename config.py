@@ -4,11 +4,6 @@ import os
 
 
 DEFAULTS = {
-    # TODO: remove unsed database
-    "MYSQL_HOST": "localhost",
-    "MYSQL_USERNAME": "myuser",
-    "MYSQL_PASSWORD": "mypassword",
-    "MYSQL_DATABASE": "mydatabase",
     "MONGO_URL": "mongodb://localhost:27017",
     "MONGO_DB": "mydatabase",
 
@@ -24,11 +19,6 @@ def load_config():
     # read out existing os environment
     load_dotenv()
     config = {
-        # TODO: remove unused database
-        "MYSQL_HOST": os.getenv("MYSQL_HOST"),
-        "MYSQL_USERNAME": os.getenv("MYSQL_USERNAME"),
-        "MYSQL_PASSWORD": os.getenv("MYSQL_PASSWORD"),
-        "MYSQL_DATABASE": os.getenv("MYSQL_DATABASE"),
         "MONGO_URL": os.getenv("MONGO_URL"),
         "MONGO_DB": os.getenv("MONGO_DB"),
 
@@ -51,11 +41,6 @@ def load_config():
 def get_log_folder():
     config = load_config()
     return config["LOG_FOLDER"]
-
-
-def get_mysql_config():
-    config = load_config()
-    return config["MYSQL_HOST"], config["MYSQL_DATABASE"], config["MYSQL_USERNAME"], config["MYSQL_PASSWORD"]
 
 
 def get_mongodb_config():

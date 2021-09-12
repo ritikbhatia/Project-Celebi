@@ -17,6 +17,7 @@ import { Provider } from "react-redux"
 import promiseMiddleware from "redux-promise-middleware"
 import reducer from "./redux/reducers"
 import App from "./containers/App"
+import './index.css';
 
 // configure fontawesome
 const icons = [faTrashAlt, faEdit, faCog, faSyncAlt, faChevronDown, faChevronRight, faDownload, faCheck, faTimes]
@@ -35,3 +36,5 @@ render(
 
     document.getElementById("root")
 )
+
+

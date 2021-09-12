@@ -1,32 +1,23 @@
-import React from "react"
-import Alert from "react-s-alert"
-import { Route, Switch, withRouter } from "react-router"
-import { BrowserRouter } from "react-router-dom"
-import "react-s-alert/dist/s-alert-default.css"
-import LandingPage from "./LandingPage"
+import React from "react";
+import "./App.css";
+import SideNav from "./SideNav";
+import Header from "./Header";
+import Main from "./Main";
+import Posts from "./Posts";
+import { BrowserRouter as Router} from "react-router-dom";
 
-
-const style = {
-    main: {
-        padding: "10px",
-    },
+function App() {
+  return (
+    <div className="App container">
+      <Router>
+        <SideNav />
+        <Main>
+          <Header />
+          <Posts />
+        </Main>
+      </Router>
+    </div>
+  );
 }
 
-const InsideApp = withRouter(() => (
-    <div>
-        <Alert stack={{ limit: 3 }} html />
-        <div style={style.main}>
-            <Switch>
-                <Route path="/" exact component={LandingPage} />
-            </Switch>
-        </div>
-    </div>
-))
-
-const App = () => (
-    <BrowserRouter>
-        <InsideApp />
-    </BrowserRouter>
-)
-
-export default App
+export default App;
