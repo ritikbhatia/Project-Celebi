@@ -67,5 +67,3 @@ class Login extends React.Component {
 }
 
 export default Login;
-
-[(5, 10), (3, 8), (7, 9), (11, 12), (13, 14)]
