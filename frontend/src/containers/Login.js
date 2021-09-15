@@ -51,7 +51,7 @@ class Login extends React.Component {
                             </Row>
                             <Row style={{display: "flex",alignItems:"center"}}>
                                 <GoogleLogin
-                                    clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+                                    clientId="200126695645-eghulruqrvtvvs0j2tbd407cq9gl5sll.apps.googleusercontent.com"
                                     buttonText="Login"
                                     onSuccess={this.onSuccessfuLogin}
                                     onFailure={this.onFailure}

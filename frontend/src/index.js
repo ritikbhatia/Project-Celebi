@@ -20,6 +20,7 @@ import App from "./containers/App"
 import './index.css';
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import Home from "./containers/Home"
+import { ChakraProvider } from "@chakra-ui/core";
 
 // configure fontawesome
 const icons = [faTrashAlt, faEdit, faCog, faSyncAlt, faChevronDown, faChevronRight, faDownload, faCheck, faTimes]
@@ -33,12 +34,14 @@ const store = createStore(reducer, composeEnhancers(applyMiddleware(promiseMiddl
 
 render(
     <Provider store={store}>
-        <BrowserRouter>
-            <App />
-            <Switch>
-                <Route exact path='/home' component={Home} />
-            </Switch>
-        </BrowserRouter>
+        <ChakraProvider>
+            <BrowserRouter>
+                <App />
+                <Switch>
+                    <Route exact path='/home' component={Home} />
+                </Switch>
+            </BrowserRouter>
+        </ChakraProvider>
     </Provider>,
 
     document.getElementById("root")
