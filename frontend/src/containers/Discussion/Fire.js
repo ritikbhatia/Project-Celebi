@@ -1,13 +1,13 @@
 import firebase from "firebase"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyASe8fP_Fv1S6oBuwRIaH4abKJ5V6s2jP4",
-  authDomain: "project-celebi-325804.firebaseapp.com",
-  projectId: "project-celebi-325804",
-  storageBucket: "project-celebi-325804.appspot.com",
-  messagingSenderId: "200126695645",
-  appId: "1:200126695645:web:4f8850a3113cdc22d17334",
-  measurementId: "G-ZVVZL6LSVH",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
 
 const initFirebase = firebase.initializeApp(firebaseConfig);
