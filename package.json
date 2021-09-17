@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@chakra-ui/core": "^1.0.0-rc.8",
     "@fortawesome/fontawesome-free": "^5.15.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-brands-svg-icons": "^5.14.0",
@@ -17,7 +16,11 @@
     "@themesberg/react-bootstrap": "^1.4.1",
     "bootstrap": "5.0.0-beta1",
     "firebase": "^8.10.0",
+    "framer-motion": "^4.1.17",
+    "google-map-react": "^2.1.10",
+    "google-maps-react": "^2.0.6",
     "jsx": "^0.9.89",
+    "lodash": "^4.17.21",
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.27",
     "npm": "^6.9.0",
@@ -37,7 +40,9 @@
     "react-scripts": "3.4.3",
     "reactstrap": "^8.10.0",
     "redux": "^4.0.4",
-    "redux-promise-middleware": "^5.1.1"
+    "redux-promise-middleware": "^5.1.1",
+    "styled-components": "^5.3.1",
+    "web-vitals": "^1.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
