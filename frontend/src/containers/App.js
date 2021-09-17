@@ -1,12 +1,11 @@
 import React from "react";
 import "./App.css";
 import Login from "./Login"
-import Map from "./Map";
 import Home from "./Home";
 import AQI from "./AQI/AQI";
-// import Posts from "./Discussion/Posts";
-// import MyGoogleMap from "./Map/MyGoogleMap";
-import MapContainer from "./Map/MapContainer";
+import MapHome from "./Map/MapHome";
+import Dashboard from "./Dashboard";
+
 
 function App() {
   return (
@@ -15,12 +14,10 @@ function App() {
         {/* <AQI /> */}
         {/* <Posts /> */}
         {/* <Home /> */}
-        <MapContainer />
+        <Dashboard />
         
       </div>
-    //   <div className="main-wrapper">
-    //   <MyGoogleMap />
-    // </div>
+    
   );
 }
 

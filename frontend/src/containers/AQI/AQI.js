@@ -10,12 +10,10 @@ function AQI() {
   return (
 
     <div className="App container">
-        <SideNav />
-        <Main>
-            <Header />
-            <h1>Live Air Quality Index(AQI)</h1>
-            <SearchCities />
-        </Main>
+
+      <h1>Live Air Quality Index(AQI)</h1>
+      <SearchCities />
+
     </div>
   );
 }
