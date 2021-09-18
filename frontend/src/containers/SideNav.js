@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 
 function SideNav() {
   const menus = [
-    { to: "/popular", text: "Analytics" },
-    { to: "/all", text: "Team" },
-    { to: "/random", text: "Random" },
+    { to: "/analytics", text: "Analytics" },
+    { to: "/profile", text: "Team" },
+    { to: "/news", text: "Random" },
   ];
 
   const subreddits = [

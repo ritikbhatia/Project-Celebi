@@ -9,6 +9,7 @@ import Search from "./News/Search";
 import '../containers/News/Search.css';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ServeNews from "./News/ServeNews";
+import Landing from "./Landing";
 
 
 function App() {
@@ -31,7 +32,7 @@ function App() {
     <BrowserRouter>
 
       <Switch>
-        <Route exact path='/' component={Home} />
+        <Route exact path='/' component={Landing} />
         <Route exact path='/analytics' component={Dashboard} />
         <Route exact path='/home' component={Home} />
         <Route exact path='/news' component={ServeNews} />
