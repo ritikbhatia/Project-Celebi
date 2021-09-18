@@ -18,6 +18,8 @@ class Login extends React.Component {
 
     onSuccessfuLogin(response) {
         console.log("Login Successful")
+        console.log(response.profileObj)
+        sessionStorage.setItem("userData", JSON.stringify(response.profileObj))
         this.setState({
             loggedIn: true
         });

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
 
@@ -11,6 +11,9 @@ function getActive(path) {
 }
 
 function Header() {
+  const [name, setName] = useState('Ash Ketchum')
+  const [email, setEmail] = useState('example@example.com')
+  const [imageUrl, setImageUrl] = useState('https://png.pngtree.com/png-clipart/20190614/original/pngtree-female-avatar-vector-icon-png-image_3725439.jpg')
 
   const menus = [
     { to: "/home", text: "Home" },
@@ -20,6 +23,13 @@ function Header() {
     { to: "/organizations", text: "Organizations" },
     { to: "/profile", text: "Profile" },
   ];
+
+  useEffect(() => {
+    const user = JSON.parse(sessionStorage.getItem('userData'));
+    setName(user.name);
+    setEmail(user.email);
+    setImageUrl(user.imageUrl);
+  }, []);
 
   return (
     <div className="header">
@@ -33,12 +43,12 @@ function Header() {
 
         <i className="fas fa-bell"></i>
         <img
-          src="https://png.pngtree.com/png-clipart/20190614/original/pngtree-female-avatar-vector-icon-png-image_3725439.jpg"
+          src={imageUrl}
         />
         
         <div className="header__user">
 
-            <span>Ash Ketchum</span>
+            <span>{name}</span>
             <i className="fas fa-caret-down"></i>
         </div>
 
