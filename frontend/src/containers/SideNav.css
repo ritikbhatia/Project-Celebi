@@ -1,9 +1,10 @@
 .sidenav {
     width: 200px;
     font-size: small;
-    box-shadow:  2px 0px 1px 1px #F4f5fa;
+    box-shadow:  2px 0px 1px 1px var(--background-primary);
     border: 0px solid;
     z-index: 1;
+    background: var(--background-primary);
 }
 
 .sidenav__logo {
@@ -49,3 +50,10 @@
     border: 1px solid #f4f5fa;
 }
 
+.sidebar__greeting {
+    margin: 1.5em 1em ;
+    color: var(--dark-green);
+    font-size: large;
+    text-align: center;
+    box-shadow: #0000;
+}

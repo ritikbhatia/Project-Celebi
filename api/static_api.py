@@ -22,6 +22,54 @@ def register_endpoints(app):
         :return: the index.html as file (basically delivering the whole frontend)
         """
         return render_template("index.html")
+    
+    @app.route("/home", methods=["GET"])
+    def get_home():
+        """
+        Each call to the API, which doesn't start with `/api` will be covered by this function providing the index.html
+        to the caller. The index.html will load the index.js in the browser, which will render the frontend. The
+        frontend will then decide what view to render. The backend is not responsible for that.
+
+        **IMPORTANT**
+        This function needs to be updated whenever new frontend routes are added to the React router. You can provide
+        multiple @app.route(..) lines for multiple frontend routes that all just return the frontend (because the
+        frontend has it's own router which decides what page to render)
+
+        :return: the index.html as file (basically delivering the whole frontend)
+        """
+        return render_template("index.html")
+    
+    @app.route("/news", methods=["GET"])
+    def get_news():
+        """
+        Each call to the API, which doesn't start with `/api` will be covered by this function providing the index.html
+        to the caller. The index.html will load the index.js in the browser, which will render the frontend. The
+        frontend will then decide what view to render. The backend is not responsible for that.
+
+        **IMPORTANT**
+        This function needs to be updated whenever new frontend routes are added to the React router. You can provide
+        multiple @app.route(..) lines for multiple frontend routes that all just return the frontend (because the
+        frontend has it's own router which decides what page to render)
+
+        :return: the index.html as file (basically delivering the whole frontend)
+        """
+        return render_template("index.html")
+    
+    @app.route("/analytics", methods=["GET"])
+    def get_analytics():
+        """
+        Each call to the API, which doesn't start with `/api` will be covered by this function providing the index.html
+        to the caller. The index.html will load the index.js in the browser, which will render the frontend. The
+        frontend will then decide what view to render. The backend is not responsible for that.
+
+        **IMPORTANT**
+        This function needs to be updated whenever new frontend routes are added to the React router. You can provide
+        multiple @app.route(..) lines for multiple frontend routes that all just return the frontend (because the
+        frontend has it's own router which decides what page to render)
+
+        :return: the index.html as file (basically delivering the whole frontend)
+        """
+        return render_template("index.html")
 
     # prevent caching of the frontend during development
     if is_debug():

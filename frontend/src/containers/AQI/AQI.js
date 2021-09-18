@@ -6,16 +6,14 @@ import Main from '../Main';
 import SearchCities from './SearchCities';
 import './AQI.css';
 
-function AQI() {
+function AQI(data) {
   return (
 
     <div className="App container">
-        <SideNav />
-        <Main>
-            <Header />
-            <h1>Live Air Quality Index(AQI)</h1>
-            <SearchCities />
-        </Main>
+
+      
+      <SearchCities data={data.data} />
+
     </div>
   );
 }

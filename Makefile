@@ -3,7 +3,7 @@ include .env
 
 
 start:
-	python3 runner.py
+	python runner.py
 
 dev:
 	IS_DEBUG=1 python3 runner.py

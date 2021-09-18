@@ -1,20 +1,44 @@
 import React from "react";
 import "./App.css";
 import Login from "./Login"
-import Map from "./Map";
 import Home from "./Home";
 import AQI from "./AQI/AQI";
-import Posts from "./Discussion/Posts";
-// import Dashboard from "./Analytics/Dashboard";
+import MapHome from "./Map/MapHome";
+import Dashboard from "./Dashboard";
+import Search from "./News/Search";
+import '../containers/News/Search.css';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import ServeNews from "./News/ServeNews";
+import Landing from "./Landing";
+
 
 function App() {
   return (
-      <div className="App container">
-        {/* <Login/> */}
-        {/* <AQI /> */}
-        <Posts />
-        {/* <Home /> */}
-      </div>
+    // <div>
+    //   {/* <Login/> */}
+    //   {/* <AQI /> */}
+    //   {/* <Posts /> */}
+    //   {/* <Home /> */}
+    //   {/* <Dashboard /> */}
+    // </div>
+
+
+    // <div className="App">
+
+    //   <Search default="bbc-news" />
+
+    // </div>
+
+    <BrowserRouter>
+
+      <Switch>
+        <Route exact path='/' component={Landing} />
+        <Route exact path='/analytics' component={Dashboard} />
+        <Route exact path='/home' component={Home} />
+        <Route exact path='/news' component={ServeNews} />
+      </Switch>
+    </BrowserRouter>
+
   );
 }
 

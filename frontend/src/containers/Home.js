@@ -4,7 +4,6 @@ import SideNav from "./SideNav";
 import Header from "./Header";
 import Main from "./Main";
 import Posts from "./Posts";
-import Map from "./Map";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 

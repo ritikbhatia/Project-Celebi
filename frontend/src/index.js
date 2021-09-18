@@ -20,7 +20,7 @@ import App from "./containers/App"
 import './index.css';
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import Home from "./containers/Home"
-import { ChakraProvider } from "@chakra-ui/core";
+// import { ChakraProvider } from "@chakra-ui/core";
 
 // configure fontawesome
 const icons = [faTrashAlt, faEdit, faCog, faSyncAlt, faChevronDown, faChevronRight, faDownload, faCheck, faTimes]
@@ -29,20 +29,18 @@ icons.forEach(icon => {
 })
 
 // create redux store with root reducer and middleware stack
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose // eslint-disable-line no-underscore-dangle
-const store = createStore(reducer, composeEnhancers(applyMiddleware(promiseMiddleware())))
+// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose // eslint-disable-line no-underscore-dangle
+// const store = createStore(reducer, composeEnhancers(applyMiddleware(promiseMiddleware())))
 
 render(
-    <Provider store={store}>
-        <ChakraProvider>
+
             <BrowserRouter>
                 <App />
                 <Switch>
                     <Route exact path='/home' component={Home} />
                 </Switch>
-            </BrowserRouter>
-        </ChakraProvider>
-    </Provider>,
+            </BrowserRouter>,
+        
 
     document.getElementById("root")
 )
