@@ -6,17 +6,19 @@ import Header from "./Header";
 import Main from "./Main";
 import Search from "./News/Search";
 import './News/Search.css';
-
+import Store from './globalStore/Store';
 export default class Dashboard extends Component {
     render() {
         return (
             <div className="App container">
                 <SideNav />
                 <Main>
-                    <Header />
-                    {/* <MapHome />
-                    <AQI /> */}
-                    <Search default="bbc-news" />
+                    <Store>
+                        <Header />
+                        <MapHome />
+                        
+                    </Store>
+                    {/* <Search default="bbc-news" /> */}
                 </Main>
             </div>
         )

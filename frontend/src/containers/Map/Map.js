@@ -1,13 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component, useContext } from 'react';
 import { withGoogleMap, GoogleMap, withScriptjs, InfoWindow, Marker } from "react-google-maps";
 import Geocode from "react-geocode";
 import Autocomplete from 'react-google-autocomplete';
 import { GoogleMapsAPI } from '../config'
 Geocode.setApiKey(GoogleMapsAPI);
 Geocode.enableDebug();
+import { Context } from '../globalStore/Store';
+import AQI from '../AQI/AQI';
 
 class Map extends Component {
-
+	
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -45,10 +47,12 @@ class Map extends Component {
 					city: (city) ? city : '',
 					state: (state) ? state : '',
 				})
+
 			},
 			error => {
 				console.error(error);
 			}
+			
 		);
 	};
 	/**
@@ -126,8 +130,13 @@ class Map extends Component {
 	 * And function for city,state and address input
 	 * @param event
 	 */
+
 	onChange = (event) => {
 		this.setState({ [event.target.name]: event.target.value });
+		const [state, dispatch] = useContext(Context);
+		dispatch({type: 'set', payload: {'location':this.state.area, 'markerPosition':this.state.markerPosition}})
+		console.log(state)
+		
 	};
 	/**
 	 * This Event triggers when the marker window is closed
@@ -182,7 +191,7 @@ class Map extends Component {
 	 * @param place
 	 */
 	onPlaceSelected = (place) => {
-		console.log('plc', place);
+		// console.log('plc', place);
 		const address = place.formatted_address,
 			addressArray = place.address_components,
 			city = this.getCity(addressArray),
@@ -205,6 +214,7 @@ class Map extends Component {
 				lng: lngValue
 			},
 		})
+		
 	};
 
 
@@ -229,7 +239,8 @@ class Map extends Component {
 						<Marker google={this.props.google}
 							name={'Dolores park'}
 							draggable={true}
-							onDragEnd={this.onMarkerDragEnd}
+							onDragEnd={this.onMarkerDragEnd 
+							}
 							position={{ lat: this.state.markerPosition.lat, lng: this.state.markerPosition.lng }}
 						/>
 						<Marker />
@@ -249,6 +260,7 @@ class Map extends Component {
 				)
 			)
 		);
+		
 		let map;
 		if (this.props.center.lat !== undefined) {
 			map = <div>
@@ -269,6 +281,7 @@ class Map extends Component {
 					<div className="form-group">
 						<label htmlFor="">City</label>
 						<input type="text" name="city" className="form-control" onChange={this.onChange} readOnly="readOnly" value={this.state.city} />
+						
 					</div>
 					<div className="form-group">
 						<label htmlFor="">Location</label>
@@ -291,13 +304,15 @@ class Map extends Component {
 						<input type="text" name="address" className="form-control" onChange={this.onChange} readOnly="readOnly" value={this.state.mapPosition.lng} />
 					</div>
 				</div>
-
-
+				<AQI data={this.state.area} />
+						
 			</div>
 		} else {
 			map = <div style={{ height: this.props.height }} />
 		}
 		return (map)
+		
 	}
+	
 }
 export default Map
