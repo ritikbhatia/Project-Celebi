@@ -6,28 +6,29 @@ import { TOKEN, SEARCH_CITIES_BASE_URL } from './AQIConst';
 
 import CityAQIList from './CityAQIList';
 
-const SearchCities = () => {
-    const [url, setUrl] = useState('');
+const SearchCities = (data) => {
+    // const [url, setUrl] = useState('');
+    const url=`${SEARCH_CITIES_BASE_URL}?token=${TOKEN}&keyword=${data.data}`
     const [cities , loading, initial, error] = useAQIAPIs(url);
-    const [searchText, setSearchText] = useState('');
-    const searchInput = useRef(null);
-
-    useEffect(() => {
-        searchInput.current.focus();
-    }, []);
+    // const [searchText, setSearchText] = useState('');
+    // const searchInput = useRef(null);
+    console.log(data)
+    // useEffect(() => {
+    //     searchInput.current.focus();
+    // }, []);
     
-    const searchCityName = (event) => {
-        event.preventDefault();
-        setUrl(`${SEARCH_CITIES_BASE_URL}?token=${TOKEN}&keyword=${searchText}`);
-    }
+    // const searchCityName = (event) => {
+    //     event.preventDefault();
+    //     setUrl(`${SEARCH_CITIES_BASE_URL}?token=${TOKEN}&keyword=${searchText}`);
+    // }
 
-    const handleSearchTextChange = (event) => {
-        setSearchText(event.target.value);
-    }
+    // const handleSearchTextChange = (event) => {
+    //     setSearchText(event.target.value);
+    // }
     return(
         <div>
             { error }
-            <form onSubmit={ e => searchCityName(e)}>
+            {/* <form onSubmit={ e => searchCityName(e)}>
                 <label>
                 
                 <input 
@@ -38,7 +39,7 @@ const SearchCities = () => {
                     onChange={ e => handleSearchTextChange(e) } />
                 </label>
                 <input type="submit" value="Show AQI" />
-            </form>
+            </form> */}
             {
                 loading ?
                     (<span>loading...</span>)
