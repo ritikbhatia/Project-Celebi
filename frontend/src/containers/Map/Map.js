@@ -7,6 +7,7 @@ Geocode.setApiKey(GoogleMapsAPI);
 Geocode.enableDebug();
 // import { Context } from '../globalStore/Store';
 import AQI from '../AQI/AQI';
+import Greenhouse from '../Greenhouse/Greenhouse';
 
 class Map extends Component {
 	
@@ -305,6 +306,7 @@ class Map extends Component {
 					</div>
 				</div>
 				<AQI data={this.state.area} />
+				<Greenhouse data={{'lat':this.state.mapPosition.lat, 'lon':this.state.mapPosition.lng}} />
 						
 			</div>
 		} else {
