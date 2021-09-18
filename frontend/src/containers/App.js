@@ -7,27 +7,37 @@ import MapHome from "./Map/MapHome";
 import Dashboard from "./Dashboard";
 import Search from "./News/Search";
 import '../containers/News/Search.css';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import ServeNews from "./News/ServeNews";
 
 
 function App() {
   return (
-      <div>
-        {/* <Login/> */}
-        {/* <AQI /> */}
-        {/* <Posts /> */}
-        {/* <Home /> */}
-        <Dashboard />
-        <Search />
-        
-      // </div>
+    // <div>
+    //   {/* <Login/> */}
+    //   {/* <AQI /> */}
+    //   {/* <Posts /> */}
+    //   {/* <Home /> */}
+    //   {/* <Dashboard /> */}
+    // </div>
 
-      
-      // <div className="App">
 
-      //   <Search default="bbc-news" />
+    // <div className="App">
 
-      // </div>
-    
+    //   <Search default="bbc-news" />
+
+    // </div>
+
+    <BrowserRouter>
+
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/analytics' component={Dashboard} />
+        <Route exact path='/home' component={Home} />
+        <Route exact path='/news' component={ServeNews} />
+      </Switch>
+    </BrowserRouter>
+
   );
 }
 

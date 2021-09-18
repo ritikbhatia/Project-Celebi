@@ -3,6 +3,15 @@
    License: none (public domain)
 */
 
+:root{
+    --background-primary: #e9edc9;
+    --text-primary : #00171f;
+    --background-secondary :#e6ccb2;
+    --text-secondary :#6b705c;
+    --accent :#faedcd;
+    font-size: 16px;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,

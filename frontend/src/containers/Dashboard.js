@@ -14,9 +14,8 @@ export default class Dashboard extends Component {
                 <SideNav />
                 <Main>
                     <Header />
-                    {/* <MapHome />
-                    <AQI /> */}
-                    <Search default="bbc-news" />
+                    <MapHome />
+                    <AQI />
                 </Main>
             </div>
         )

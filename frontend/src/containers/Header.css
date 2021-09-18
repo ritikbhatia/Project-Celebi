@@ -18,8 +18,8 @@ padding: 10px;
 }
 
 .header__left a.active {
-    color: #fd4500;
-    border-bottom: 2px solid #fd4500;
+    color: var(--text-secondary);
+    border-bottom: 2px solid var(--text-secondary);
 }
 
 

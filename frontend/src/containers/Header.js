@@ -6,12 +6,12 @@ function Header() {
     <div className="header">
       <div className="header__left">
         <ul>
-          <Link to="/popular" className="active">Popular</Link>
-          <Link to="/hot">Hot</Link>
-          <Link to="/rising">Rising</Link>
-          <Link to="/controversial">Controversial</Link>
-          <Link to="/top">Top</Link>
-          <Link to="/gilded">Gilded</Link>
+          <Link to="/home" className="active">Home</Link>
+          <Link to="/analytics">Analytics</Link>
+          <Link to="/news">News</Link>
+          <Link to="/volunteer">Volunteer</Link>
+          <Link to="/organizations">Organizations</Link>
+          <Link to="/profile">Profile</Link>
         </ul>
       </div>
 
@@ -24,7 +24,7 @@ function Header() {
         
         <div className="header__user">
 
-            <span>Amir Vhora</span>
+            <span>Ash Ketchum</span>
             <i className="fas fa-caret-down"></i>
         </div>
 
