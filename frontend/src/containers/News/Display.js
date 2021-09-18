@@ -18,7 +18,7 @@ class Display extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps !== this.props) {
-      this.setState({ url: `https://newsapi.org/v2/everything?q=environment&sources=${nextProps.default}&apiKey=00c8d3561b9642528ce180bc37dac50e` });
+      this.setState({ url: `https://newsapi.org/v2/everything?q=environment&sources=${nextProps.default}&apiKey=4577c98d7c8a41f6a144ee2c492e95bc` });
 
       this.getArticles(nextProps.default);
     }
@@ -36,7 +36,7 @@ class Display extends Component {
   }
 
   getArticles(url) {
-    const apiKey = '00c8d3561b9642528ce180bc37dac50e';
+    const apiKey = '4577c98d7c8a41f6a144ee2c492e95bc';
     // Make HTTP reques with Axios
     axios
       .get(`https://newsapi.org/v2/everything?q=environment&sources=${url}&apiKey=${apiKey}`)
