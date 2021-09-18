@@ -26,9 +26,11 @@ function Header() {
 
   useEffect(() => {
     const user = JSON.parse(sessionStorage.getItem('userData'));
-    setName(user.name);
-    setEmail(user.email);
-    setImageUrl(user.imageUrl);
+    if (user != undefined) {
+      setName(user.name);
+      setEmail(user.email);
+      setImageUrl(user.imageUrl);
+    }
   }, []);
 
   return (
