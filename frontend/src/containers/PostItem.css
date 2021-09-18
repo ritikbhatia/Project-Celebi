@@ -21,12 +21,14 @@
 }
 
 .post__center > img {
-    object-fit: fill;
+    object-fit: cover;
     height: 60px;
+    width: 75px;
     border-radius: 5px;
 }
 
 .post__right {
+    text-align: left;
     width: 85%;
 }
 
