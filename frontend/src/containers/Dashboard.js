@@ -4,6 +4,8 @@ import AQI from './AQI/AQI';
 import SideNav from "./SideNav";
 import Header from "./Header";
 import Main from "./Main";
+import Search from "./News/Search";
+import './News/Search.css';
 
 export default class Dashboard extends Component {
     render() {
@@ -12,8 +14,9 @@ export default class Dashboard extends Component {
                 <SideNav />
                 <Main>
                     <Header />
-                    <MapHome />
-                    <AQI />
+                    {/* <MapHome />
+                    <AQI /> */}
+                    <Search default="bbc-news" />
                 </Main>
             </div>
         )
