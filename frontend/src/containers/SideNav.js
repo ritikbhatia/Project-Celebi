@@ -1,13 +1,13 @@
 import React from "react";
 import "./SideNav.css";
-import Logo from '../../../static/Logo.jpeg';
+import Logo from './celebi_logo.jpg';
 
 import { Link } from "react-router-dom";
 
 function SideNav() {
   const menus = [
-    { to: "/popular", text: "Analytics" },
-    { to: "/all", text: "Team" },
+    { to: "/analytics", text: "Analytics" },
+    { to: "/team", text: "Team" },
     { to: "/random", text: "Random" },
   ];
 
