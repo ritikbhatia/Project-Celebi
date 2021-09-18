@@ -11,7 +11,7 @@ function getActive(path) {
 }
 
 function Header() {
-  const [name, setName] = useState('Ash Ketchum')
+  const [name, setName] = useState('Anonymous')
   const [email, setEmail] = useState('example@example.com')
   const [imageUrl, setImageUrl] = useState('https://png.pngtree.com/png-clipart/20190614/original/pngtree-female-avatar-vector-icon-png-image_3725439.jpg')
 
