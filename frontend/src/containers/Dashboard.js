@@ -6,6 +6,7 @@ import Header from "./Header";
 import Main from "./Main";
 import Search from "./News/Search";
 import './News/Search.css';
+// import Store from './globalStore/Store';
 
 export default class Dashboard extends Component {
     render() {
@@ -15,7 +16,7 @@ export default class Dashboard extends Component {
                 <Main>
                     <Header />
                     <MapHome />
-                    <AQI />
+                    {/* <AQI /> */}
                 </Main>
             </div>
         )

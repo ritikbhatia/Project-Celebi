@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import AQI from '../AQI/AQI';
 import Map from './Map';
 
 class MapHome extends Component {
@@ -13,6 +14,7 @@ class MapHome extends Component {
 					width='100vw'
 					zoom={15}
 				/>
+			
 			</div>
 		);
 	}
