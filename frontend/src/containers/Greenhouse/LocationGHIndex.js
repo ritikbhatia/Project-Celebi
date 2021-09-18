@@ -50,7 +50,7 @@ const CityGHI = props => {
     }
     return (
         <div>
-            <Row>
+            {/* <Row>
             <Col sm="4">
                 <Card body inverse color="danger">
                 <CardTitle tag="h5">Carbon Emissions:  { carbonEmissions }</CardTitle>
@@ -64,7 +64,7 @@ const CityGHI = props => {
                 <CardText><b>{ getCategorizedGH( harmfulGases).impact }</b></CardText>
                 
                 </Card>
-            </Col>
+            </Col> */}
             {/* <Col sm="4">
                 <Card body inverse color="warning">
                 <CardTitle tag="h5">Ozone:  { ozone }</CardTitle>
@@ -79,7 +79,7 @@ const CityGHI = props => {
                 
                 </Card>
             </Col> */}
-            </Row>
+            {/* </Row> */}
 
         <div  
             className={`cityInfo ${getCategorizedGH(carbonEmissions).className}`}
