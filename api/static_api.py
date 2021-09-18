@@ -24,7 +24,7 @@ def register_endpoints(app):
         return render_template("index.html")
     
     @app.route("/home", methods=["GET"])
-    def get_index():
+    def get_home():
         """
         Each call to the API, which doesn't start with `/api` will be covered by this function providing the index.html
         to the caller. The index.html will load the index.js in the browser, which will render the frontend. The
@@ -40,7 +40,7 @@ def register_endpoints(app):
         return render_template("index.html")
     
     @app.route("/news", methods=["GET"])
-    def get_index():
+    def get_news():
         """
         Each call to the API, which doesn't start with `/api` will be covered by this function providing the index.html
         to the caller. The index.html will load the index.js in the browser, which will render the frontend. The
@@ -56,7 +56,7 @@ def register_endpoints(app):
         return render_template("index.html")
     
     @app.route("/analytics", methods=["GET"])
-    def get_index():
+    def get_analytics():
         """
         Each call to the API, which doesn't start with `/api` will be covered by this function providing the index.html
         to the caller. The index.html will load the index.js in the browser, which will render the frontend. The
