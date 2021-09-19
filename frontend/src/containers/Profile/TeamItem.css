@@ -1,0 +1,27 @@
+.item_container {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0rem;
+}
+
+.team_item {
+    text-align: left;
+    width: 85%;
+}
+
+.team_item > h3 {
+    /* font-weight: bold; */
+    font-weight: 600;
+    font-size: medium;
+    color: #464855;
+    padding: 5px 0;
+}
+
+.team_item > .team_desc {
+    font-size: small;
+    color: #808080;
+}
+
+.team_item > * {
+    margin-bottom: 2px;
+}

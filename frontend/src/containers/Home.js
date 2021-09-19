@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import "./App.css";
 import SideNav from "./SideNav";
 import Header from "./Header";
@@ -22,5 +22,3 @@ function Home() {
     </div>
   );
 }
-
-export default Home;
