@@ -66,7 +66,7 @@ const NewPost = () => {
                     <br />
                     <input id="new_url" name="new_url" type="text" />
                     <br />
-                    <button type="button" id="submit" onClick={handleSubmit}>Submit</button>
+                    <button className="button-primary" type="button" id="submit" onClick={handleSubmit}>Submit</button>
                 </form>
             </div>
         </div>

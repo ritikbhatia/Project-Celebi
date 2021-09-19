@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import db from "../Firestore";
+import { Col, Row } from 'reactstrap'
 
 function Leaderboard() {
     const [teams, setTeams] = useState([])
@@ -27,10 +28,29 @@ function Leaderboard() {
     return (
         <div className="leaderboard_container">
             {teams.map((team) => (
-                <div className="leaderboard_item">
-                    <div className="team_name">{team.name}</div>
-                    <div className="team_points">{team.points}</div>
-                </div>
+                // <div className="leaderboard_item">
+                //     <div className="team_name float-child">{team.name}</div>
+                //     <div className="team_points float-child">{team.points}</div>
+                //     <br />
+                // </div>
+                <table>
+                    {/* <tr>
+                        <th>Team</th>
+                        <th>Points</th>
+                    </tr> */}
+                    <tr>
+                        <td>{team.name}</td>
+                        <td>{team.points}</td>
+                    </tr>
+                </table>
+                // <Row className="">
+                //     <Col>
+                //     <p>{team.name}</p>
+                //     </Col>
+                //     <Col>
+                //     <p>{team.points}</p>
+                //     </Col>
+                // </Row>
             ))}
         </div>
     );

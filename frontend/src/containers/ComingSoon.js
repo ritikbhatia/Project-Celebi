@@ -17,7 +17,7 @@ function ComingSoon() {
             <Header />
             <h2 className="news-header">Organizations</h2>
         <h3 className="news-subheader">The organizations are not here yet, but they will be joining us for a sustainable future soon :D</h3>
-            <ComingSoonBot />
+            <ComingSoonBot/>
         </Main>
     </div>
   );
