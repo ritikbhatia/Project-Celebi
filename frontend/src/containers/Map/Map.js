@@ -7,7 +7,11 @@ Geocode.setApiKey(GoogleMapsAPI);
 Geocode.enableDebug();
 // import { Context } from '../globalStore/Store';
 import AQI from '../AQI/AQI';
-
+import Greenhouse from '../Greenhouse/Greenhouse';
+import { Container, Row, Col, Jumbotron } from 'reactstrap';
+import { footprintRatio, totalFootprintArea } from '../OpenStreet/OpenStreet';
+import StreetFootprint from '../OpenStreet/StreetFp.jpeg';
+import CityFootprint from '../OpenStreet/CityFp.jpeg';
 class Map extends Component {
 	
 	constructor(props) {
@@ -250,8 +254,10 @@ class Map extends Component {
 								width: '100%',
 								height: '40px',
 								paddingLeft: '16px',
-								marginTop: '2px',
-								marginBottom: '500px'
+								paddingTop: '1px',
+								marginTop: '10px',
+								marginBottom: '500px',
+								borderRadius: '50px'
 							}}
 							onPlaceSelected={this.onPlaceSelected}
 							types={['(regions)']}
@@ -263,8 +269,10 @@ class Map extends Component {
 		
 		let map;
 		if (this.props.center.lat !== undefined) {
-			map = <div>
-
+			map =
+				<Container style={{width:'100%', display:'flex', justifyContent:'space-evenly', alignItems:'stretch'}}>
+				<Row width='8' style={{width:'100%', display:'flex', justifyContent:'space-evenly', alignItems:'stretch'}}>
+					<Col width='12' style={{width:'100%', justifyContent:'space-evenly', alignItems:'stretch'}}>
 				<AsyncMap
 					googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${GoogleMapsAPI}&libraries=places`}
 					loadingElement={
@@ -277,36 +285,89 @@ class Map extends Component {
 						<div style={{ height: `100%` }} />
 					}
 				/>
+				
+				
 				<div style={{ marginTop: '10vh' }}>
-					<div className="form-group">
+					{/* <div className="form-group">
 						<label htmlFor="">City</label>
 						<input type="text" name="city" className="form-control" onChange={this.onChange} readOnly="readOnly" value={this.state.city} />
 						
-					</div>
+					</div> */}
 					<div className="form-group">
-						<label htmlFor="">Location</label>
-						<input type="text" name="area" className="form-control" onChange={this.onChange} readOnly="readOnly" value={this.state.area} />
+						<label htmlFor="" style={{fontWeight:"Bolder"}}>Location</label>
+						<input style={{width: '100%',
+								height: '40px',
+								paddingLeft: '16px',
+								paddingTop: '1px',
+								marginTop: '10px',
+								borderRadius: '50px' }} type="text" name="area" className="form-control" onChange={this.onChange} readOnly="readOnly" value={this.state.area} />
 					</div>
-					<div className="form-group">
+					{/* <div className="form-group">
 						<label htmlFor="">State</label>
 						<input type="text" name="state" className="form-control" onChange={this.onChange} readOnly="readOnly" value={this.state.state} />
-					</div>
-					<div className="form-group">
+					</div> */}
+					{/* <div className="form-group">
 						<label htmlFor="">Address</label>
 						<input type="text" name="address" className="form-control" onChange={this.onChange} readOnly="readOnly" value={this.state.address} />
-					</div>
-					<div className="form-group">
+					</div> */}
+					{/* <div className="form-group">
 						<label htmlFor="">Latitude</label>
 						<input type="text" name="address" className="form-control" onChange={this.onChange} readOnly="readOnly" value={this.state.mapPosition.lat} />
 					</div>
 					<div className="form-group">
-						<label htmlFor="">Latitude</label>
+						<label htmlFor="">Longitude</label>
 						<input type="text" name="address" className="form-control" onChange={this.onChange} readOnly="readOnly" value={this.state.mapPosition.lng} />
-					</div>
+					</div> */}
+				
 				</div>
+				<label htmlFor="" style={{fontWeight:"Bolder"}}>Cityscape Metrics</label>
+
+				<Container style={{width:'100%', marginTop:"20px", display:'flex', justifyContent:'space-evenly', alignItems:'stretch'}}>
+					<Row width='8' style={{width:'100%', display:'flex', justifyContent:'space-evenly', alignItems:'stretch'}} >
+						<Col width='8'>
+						<label htmlFor="" style={{fontWeight:"Bolder"}}><b>One Squaremile Building and Street Footprint</b></label><br />
+						<img src={StreetFootprint} height={'180px'} width={'220px'} alt="Street Foot Print"/>
+						</Col>
+						<Col><label htmlFor="" style={{fontWeight:"Bolder"}}><b>Citywide Building Footprint</b></label><br />
+						<img src={CityFootprint} alt="City Building Footprint"/>
+						</Col>
+					</Row>
+					<Row>
+					<Col style={{margin:"20px", padding:"10px", borderRadius:"20px", backgroundColor:"#e9edc9", textAlign:"center"}}>
+						<label htmlFor="" style={{fontWeight:"Bolder"}}>Total Building Footprint </label><br />
+						{totalFootprintArea} m<sup>2</sup>
+
+						</Col>
+						<Col style={{margin:"20px", padding:"10px", borderRadius:"20px", backgroundColor:"#e9edc9", textAlign:"center"}}>
+						<label htmlFor="" style={{fontWeight:"Bolder"}}><b>Percentage Building Footprint</b></label><br />
+						{footprintRatio}
+						</Col>
+					</Row>
+				</Container>
+				</Col>
+				</Row>
+				<Row width='4'>
+				{/* <Jumbotron fluid >
+        		<Container fluid> */}
+				<Col style={{marginLeft:"20px", borderRadius:"20px", backgroundColor:"#e9edc9", textAlign:"center"}}>
+				<label style={{padding:"20px", fontWeight:"Bolder"}}> Air Quality Index (Normalised to AQI Scale) </label>
 				<AQI data={this.state.area} />
-						
-			</div>
+				</Col>
+				{/* </Container>
+      			</Jumbotron> */}
+				{/* <Jumbotron fluid>
+        		<Container fluid> */}
+				<Col style={{marginLeft:"20px", marginTop:"20px",borderRadius:"20px", backgroundColor:"#e9edc9", textAlign:"center"}}>
+				<label style={{padding:"20px", fontWeight:"Bolder"}}>Greenhouse Index (amt in Kg/m<sup>2</sup>)</label>
+				<Greenhouse data={{'lat':this.state.mapPosition.lat, 'lon':this.state.mapPosition.lng}} />
+				
+				</Col>
+				{/* </Container>
+      			</Jumbotron> */}
+				</Row>
+
+
+				</Container>	
 		} else {
 			map = <div style={{ height: this.props.height }} />
 		}
