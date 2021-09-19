@@ -11,34 +11,25 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ServeNews from "./News/ServeNews";
 import Landing from "./Landing";
 import Volunteer from "./Volunteer/Volunteer";
-
+import Snow from 'react-snow-effect';
+import ComingSoon from "./ComingSoon";
+// import Celebi from "./Celebi";
+import WIPRender from "./WIPRender";
 
 function App() {
   return (
-    // <div>
-    //   {/* <Login/> */}
-    //   {/* <AQI /> */}
-    //   {/* <Posts /> */}
-    //   {/* <Home /> */}
-    //   {/* <Dashboard /> */}
-    // </div>
-
-
-    // <div className="App">
-
-    //   <Search default="bbc-news" />
-
-    // </div>
 
     <BrowserRouter>
-
+      <Snow />
       <Switch>
-        <Route exact path='/' component={Landing} />
-        <Route exact path='/login' component={Login} />
+        <Route exact path='/' component={Login} />
+        {/* <Route exact path='/login' component={Login} /> */}
         <Route exact path='/analytics' component={Dashboard} />
         <Route exact path='/home' component={Home} />
         <Route exact path='/news' component={ServeNews} />
         <Route exact path='/volunteer' component={Volunteer} /> 
+        <Route exact path='/organizations' component={ComingSoon} />
+        <Route exact path='/crowdfunding' component={WIPRender} />
       </Switch>
     </BrowserRouter>
 
