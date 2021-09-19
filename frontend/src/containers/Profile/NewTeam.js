@@ -42,7 +42,8 @@ const NewTeam = (props) => {
                 {
                     name: mod_title,
                     description: new_desc,
-                    createdAt: date.toUTCString()
+                    createdAt: date.toUTCString(),
+                    points: 0
                 }
             )
             .then(handleJoin(mod_title))

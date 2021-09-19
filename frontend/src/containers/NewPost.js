@@ -31,6 +31,9 @@ const NewPost = () => {
             // const nocache_url = `${new_url==""?"http://cdn.onlinewebfonts.com/svg/img_519597.png":new_url}?dt=${Date.now()}`;
             console.log([new_title, new_url]);
 
+            let u = await db.collection("users").doc(userData.email).get()
+            let post_team = (!("team" in u.data()) || u.data()["team"] == "")?"#global":u.data()["team"]
+            
             await db.collection("posts").add({
                 title: new_title,
                 upvotes: 0,
@@ -38,7 +41,7 @@ const NewPost = () => {
                 createdAt: date.toUTCString(),
                 image: (new_url==""?"http://cdn.onlinewebfonts.com/svg/img_519597.png":new_url),
                 user: userData.name,
-                team: (userData.team==undefined?"#global":userData.team),
+                team: post_team,
             })
             .then(hide());
         }

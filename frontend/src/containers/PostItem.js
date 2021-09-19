@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./PostItem.css";
 import { Link } from "react-router-dom";
-import db from "./Firestore"
+import db from "./Firestore";
+import firebase from "firebase";
 
 
 function PostItem(props) {
@@ -59,6 +60,17 @@ function PostItem(props) {
     const previousVotes = votedPosts;
     previousVotes[post.id] = voteState;
     localStorage.setItem("votes", JSON.stringify(previousVotes))
+
+    if (post.team != "#global") {
+      const increment = firebase.firestore.FieldValue.increment(change);
+
+      await db.collection("teams").doc(post.team)
+      .update(
+        {
+          points: increment
+        }
+      )
+    }
     
     await db
     .collection("posts")
