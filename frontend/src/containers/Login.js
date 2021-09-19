@@ -3,11 +3,16 @@ import GoogleLogin from 'react-google-login';
 import { Container, Row, Col } from 'reactstrap';
 import { Redirect, useHistory } from 'react-router';
 import titleimage from './celebi.jpg'
-import "./LoginRegister.css"
+// import "./LoginRegister.css"
+import './Login.css'
+import { Jumbotron, Media } from 'reactstrap';
+import Logo from './Logo.jpeg';
+import { AwesomeButton } from "react-awesome-button";
+
 
 class Login extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             loggedIn: false
@@ -24,43 +29,54 @@ class Login extends React.Component {
             loggedIn: true
         });
     }
-    
+
     onFailure(response) {
         console.log(response);
-      }
+    }
 
-    render(){ 
+    render() {
         if (this.state.loggedIn) {
-            return <Redirect to = "/home" />
+            return <Redirect to="/home" />
         } else {
             return (
-                <div>
-                    <div className="login__box">
-                        <Container style={{padding: "20px"}}>
-                            <Row>
-                                <Col>
-                                    <p className="login__text">
-                                    Welcome to Project Celebi<br/>
-                                    <span className="blue__text">Enabling sustainable communities for a brighter future. </span>
-                                    </p>
-                                </Col>
-                                <Col>
+                <div class="demo-wrap">
+
+                    <img
+                        class="demo-bg"
+                        src="https://wallpapercave.com/wp/wp6721067.jpg"
+                        alt=""
+                    />
+                    <div class="demo-content">
+                        <Jumbotron fluid>
+                            <Container fluid>
+                                
                                     <img
-                                    alt="titleImage"
-                                    src={titleimage}
-                                    className="title__image"/>
-                                </Col>
-                            </Row>
-                            <Row style={{display: "flex",alignItems:"center"}}>
+                                            alt="titleImage"
+                                            src={Logo}
+                                            className="login-image" />
+                                        <h1 className="title">Project Celebi</h1>
+                                        <h3 className="subheading">Sustainable communities for a brighter future</h3>
+                                    
                                 <GoogleLogin
                                     clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+                                    render={renderProps => (
+                                        <button className="unstyled-button" onClick={renderProps.onClick} disabled={renderProps.disabled}><AwesomeButton style={{outerWidth:'100%'}} size="large" type="primary"> Sign in with Google</AwesomeButton></button>
+                                    )}
                                     buttonText="Login"
                                     onSuccess={this.onSuccessfuLogin}
                                     onFailure={this.onFailure}
                                     cookiePolicy={'single_host_origin'}
                                 />
-                            </Row>
-                        </Container>
+                               
+
+                               
+                            </Container>
+                        </Jumbotron>
+                        <div>
+                            <Container>
+
+                            </Container>
+                        </div>
                     </div>
                 </div>
             );
