@@ -39,7 +39,7 @@ function Leaderboard() {
                         <th>Points</th>
                     </tr> */}
                     <tr>
-                        <td>{team.name}</td>
+                        <td>{team.name}&nbsp;&nbsp;</td>
                         <td>{team.points}</td>
                     </tr>
                 </table>
