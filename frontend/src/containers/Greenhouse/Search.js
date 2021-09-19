@@ -9,7 +9,7 @@ const SearchGH = (data) => {
     
     const url=`${BaseURL}?apikey=${TOKEN}&lat=${data.data.lat}&lon=${data.data.lon}`
     const [GHIndex , loading, initial, error] = useGHApi(url);
-
+    
     console.log(GHIndex)
 
     return(

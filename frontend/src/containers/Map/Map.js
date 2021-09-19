@@ -9,6 +9,9 @@ Geocode.enableDebug();
 import AQI from '../AQI/AQI';
 import Greenhouse from '../Greenhouse/Greenhouse';
 import { Container, Row, Col, Jumbotron } from 'reactstrap';
+import { footprintRatio, totalFootprintArea } from '../OpenStreet/OpenStreet';
+import StreetFootprint from '../OpenStreet/StreetFp.jpeg'
+import CityFootprint from '../OpenStreet/CityFp.jpeg'
 class Map extends Component {
 	
 	constructor(props) {
@@ -320,23 +323,23 @@ class Map extends Component {
 				</Col>
 				</Row>
 				<Row width='4'>
-				<Jumbotron fluid >
-        		<Container fluid>
-				<Col style={{marginLeft:"20px", alignItems:"center"}}>
-				<label style={{padding:"20px"}}>Air Quality Index</label>
+				{/* <Jumbotron fluid >
+        		<Container fluid> */}
+				<Col style={{marginLeft:"20px", borderRadius:"20px", backgroundColor:"#e9edc9", textAlign:"center", overflowY:"auto"}}>
+				<label style={{padding:"20px"}}> Air Quality Index (Normalised to AQI Scale) </label>
 				<AQI data={this.state.area} />
 				</Col>
-				</Container>
-      			</Jumbotron>
-				<Jumbotron fluid>
-        		<Container fluid>
-				<Col style={{marginLeft:"20px", alignItems:"center"}}>
-				<label style={{padding:"20px"}}>Greenhouse Index</label>
-				<Greenhouse data={{'lat':this.state.mapPosition.lat, 'lon':this.state.mapPosition.lng}} />
+				{/* </Container>
+      			</Jumbotron> */}
+				{/* <Jumbotron fluid>
+        		<Container fluid> */}
+				<Col style={{marginLeft:"20px", marginTop:"20px",borderRadius:"20px", backgroundColor:"#e9edc9", textAlign:"center"}}>
+				<label style={{padding:"20px"}}>Greenhouse Index (amt in Kg/m<sup>2</sup>)</label>
+				{/* <Greenhouse data={{'lat':this.state.mapPosition.lat, 'lon':this.state.mapPosition.lng}} /> */}
 				
 				</Col>
-				</Container>
-      			</Jumbotron>
+				{/* </Container>
+      			</Jumbotron> */}
 				</Row>
 
 

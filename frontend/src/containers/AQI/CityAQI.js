@@ -47,7 +47,7 @@ const CityAQI = props => {
         return moment(time).format('h:mm:ss a');
     }
     return (
-        <div  
+        <div style={{marginLeft:"40px"}} 
             className={`cityInfo ${getCategorizedAQI(aqi).className}`}
             onClick={ () => setShowDetails(!showDetails)}>
             <span>At { getAtTimeFormatted(atTime) }: { placeName } - { aqi }</span>
