@@ -43,7 +43,7 @@ function JobContainer({ companyDetails, setFilterBy, filterBy }) {
         >
           <div className="job-logo">
             <img
-              src={`../images${companyDetail.logo}`}
+              src={"https://sloanreview.mit.edu/wp-content/uploads/2016/04/Kruschwitz-Building-Green-1200-382x255.jpg"}
               alt={`${companyDetail.company}-Logo`}
             />
           </div>

@@ -20,7 +20,7 @@ function SideNav() {
 
       <div className="sidenav__search">
         <input type="text" name="search" placeholder="search" />
-        <i className="fas fa-search"></i>
+        {/* <i className="fas fa-search"></i> */}
       </div>
 
       <div className="sidenav__link">
@@ -32,8 +32,10 @@ function SideNav() {
           ))}
         </ul>
         <hr />
-        <h2>LeaderBoard</h2>
-        <Leaderboard />
+        <div className="leaderboard-container">
+          <h1 className="leaderboard-header">LeaderBoard</h1>
+          <Leaderboard />
+        </div>
       </div>
     </div>
   );
