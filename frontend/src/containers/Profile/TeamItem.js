@@ -28,7 +28,7 @@ function TeamItem(props) {
         </div>
 
         <div className="join_button">
-            <button onClick={handleJoin}>Join Team</button>
+            <button className="button-primary" onClick={handleJoin}>Join Team</button>
         </div>
         </div>
     );

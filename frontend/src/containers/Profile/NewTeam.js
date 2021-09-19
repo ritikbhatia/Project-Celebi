@@ -53,7 +53,7 @@ const NewTeam = (props) => {
     
     return (
         <div className='buttonContainer'>
-        <button id="add" onClick={show}>+ Create a New Team for your community</button>
+        <button className="button-primary" id="add" onClick={show}>+ Create a New Team for your community</button>
 
         <div id="popup">
             <form id="form">

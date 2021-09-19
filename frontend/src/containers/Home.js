@@ -14,8 +14,10 @@ function Home() {
       <SideNav />
       <Main>
         <Header />
+        <div className="current_team">
         <h2 className="news-header">Discussions</h2>
         <h3 className="news-subheader">Find out how others are changing the world!</h3>
+        </div>
         <NewPost />
         <Posts />
       </Main>

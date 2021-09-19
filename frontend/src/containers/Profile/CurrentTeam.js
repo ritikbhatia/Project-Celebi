@@ -7,12 +7,12 @@ const CurrentTeam = ({ props }) => {
     if (props.name != "") {
         return (
             <div className="current_team">
-                Your current team is:
-                <br />
-                Team Name: {props.name}
-                <br />
-                Description: {props.description}
-                <br />
+                <h1 className="news-header">Current Team</h1>
+                {/* <br /> */}
+                <h3 className="news-subheader">Team - <span style={{fontWeight:"bold"}}>{props.name}</span></h3>
+                {/* <br /> */}
+                <h3 className="news-subheader"><span style={{fontStyle:'italic'}}>{props.description}</span></h3>
+                {/* <br /> */}
                 Created on: {props.createdAt}
             </div>
         );

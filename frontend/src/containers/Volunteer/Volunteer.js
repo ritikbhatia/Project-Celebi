@@ -51,8 +51,10 @@ function Volunteer() {
         <SideNav />
         <Main>
           <Header />
+          <div className="current_team">
           <h2 className="news-header">Volunteer</h2>
         <h3 className="news-subheader">Find opportunities to support your local community</h3>
+        </div>
           {companyDetails && (
             <JobListContainer
               companyDetails={companyDetails}
