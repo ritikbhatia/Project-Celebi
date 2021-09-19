@@ -48,7 +48,6 @@ function Landing() {
                 src="https://wallpapercave.com/wp/wp6721067.jpg"
                 alt=""
             />
-            <Snow />
             <div class="demo-content">
                 <h1 className="title">Project Celebi</h1>
                 <h3 className="subheading">Sustainable communities for a resilient future</h3>
