@@ -52,7 +52,7 @@ function Landing() {
             <div class="demo-content">
                 <h1 className="title">Project Celebi</h1>
                 <h3 className="subheading">Sustainable communities for a resilient future</h3>
-                <Link to="/home"><AwesomeButton size="large" type="primary">Login</AwesomeButton></Link>
+                <Link to="/login"><AwesomeButton size="large" type="primary">Login</AwesomeButton></Link>
                 {/* <LandingScreen /> */}
             </div>
             {/* <ParticlesBg type="custom" config={config} bg={true} /> */}

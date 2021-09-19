@@ -1,6 +1,7 @@
 const webpack = require("webpack")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const path = require("path")
+const Dotenv = require('dotenv-webpack');
 
 const BUILD_DIR = path.resolve(__dirname, "static")
 const APP_DIR = path.resolve(__dirname, "frontend", "src")
@@ -50,7 +51,7 @@ const config = {
             },
         ],
     },
-    plugins: [HTMLWebpackPluginConfig, HotModuleReplacementPluginConfig],
+    plugins: [HTMLWebpackPluginConfig, HotModuleReplacementPluginConfig, new Dotenv()],
 }
 
 module.exports = config

@@ -18,6 +18,8 @@ class Login extends React.Component {
 
     onSuccessfuLogin(response) {
         console.log("Login Successful")
+        console.log(response.profileObj)
+        sessionStorage.setItem("userData", JSON.stringify(response.profileObj))
         this.setState({
             loggedIn: true
         });
@@ -51,7 +53,7 @@ class Login extends React.Component {
                             </Row>
                             <Row style={{display: "flex",alignItems:"center"}}>
                                 <GoogleLogin
-                                    clientId="200126695645-eghulruqrvtvvs0j2tbd407cq9gl5sll.apps.googleusercontent.com"
+                                    clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
                                     buttonText="Login"
                                     onSuccess={this.onSuccessfuLogin}
                                     onFailure={this.onFailure}

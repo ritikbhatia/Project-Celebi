@@ -22,6 +22,9 @@ padding: 10px;
     border-bottom: 2px solid var(--text-secondary);
 }
 
+.header__left a.inactive {
+    color: var(--text-secondary)
+}
 
 .header__right {
   display: flex;
