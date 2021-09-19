@@ -15,6 +15,10 @@ export default class Dashboard extends Component {
                 <SideNav />
                 <Main>
                     <Header />
+                    <div className="current_team">
+                        <h2 className="news-header">Sustainability Analytics</h2>
+                        <h3 className="news-subheader">The world at your fingertips</h3>
+                    </div>
                     <MapHome />
                 </Main>
             </div>

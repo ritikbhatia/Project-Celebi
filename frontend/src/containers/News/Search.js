@@ -41,6 +41,7 @@ class Search extends Component {
   render() {
     return (
       <div className="">
+        <div className="current_team">
         <h2 className="news-header">Sustainability News</h2>
         <h3 className="news-subheader">Read from {this.state.count} News Outlets</h3>
         <select value={this.state.value} onChange={this.handleChange} class="select">
@@ -52,8 +53,11 @@ class Search extends Component {
             );
           })}
         </select>
+        
         <Outlet default={this.state.value} />
+        </div>
         <Display default={this.state.value} />
+        
       </div>
     );
   }
