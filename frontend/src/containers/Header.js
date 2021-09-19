@@ -21,6 +21,7 @@ function Header() {
     { to: "/news", text: "News" },
     { to: "/volunteer", text: "Volunteer" },
     { to: "/organizations", text: "Organizations" },
+    { to: "/Crowdfunding", text: "Crowdfunding" },
     { to: "/profile", text: "Profile" },
   ];
 
