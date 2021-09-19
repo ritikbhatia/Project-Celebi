@@ -1,6 +1,7 @@
 import React from "react";
 import "./SideNav.css";
 import Logo from './Logo.jpeg';
+import Leaderboard from "./Leaderboard/Leaderboard";
 
 import { Link } from "react-router-dom";
 
@@ -11,22 +12,6 @@ function SideNav() {
     { to: "/news", text: "Random" },
   ];
 
-  const subreddits = [
-    "#teamRocket",
-    '#teamLigma',
-    "#teamTrees",
-    '#teamMagma',
-    '#teamAqua',
-    "#teamEarth",
-    "#teamBlue",
-    "#teamGreen",
-    "#teamGeo",
-    "#teamNeo",
-    "#teamPlanets",
-    '#teamPlant',
-    '#teamSustainability', 
-    '#teamEnv'
-  ];
   return (
     <div className="sidenav">
       <div className="sidenav__logo">
@@ -48,11 +33,7 @@ function SideNav() {
         </ul>
         <hr />
         <h2>LeaderBoard</h2>
-        <ul className="sidenav__subreddit">
-          {subreddits.map(subreddit => (
-              <li><Link to={`/r/${subreddit}`}>{subreddit}</Link></li>
-          ))}
-        </ul>
+        <Leaderboard />
       </div>
     </div>
   );

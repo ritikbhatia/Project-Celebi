@@ -13,7 +13,8 @@ export default class WIPRender extends Component {
                 <SideNav />
                 <Main>
                     <Header />
-                    
+                    {/* <h2 className="news-header">Crowdfunding</h2>
+        <h3 className="news-subheader">You will be able to fund your sustainability drives soon!</h3> */}
                     <WIP />
                 </Main>
             </div>

@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import {
+  Card, CardImg, CardText, CardBody,
+  CardTitle, CardSubtitle, Button
+} from 'reactstrap';
 
 class Display extends Component {
   constructor(props) {
@@ -63,11 +67,15 @@ class Display extends Component {
                     {news.title}
                   </a>
                 </h3>
+                <br />
                 <p>{news.description}</p>
+                <br />
                 <div className="author">
                   <p>
                     By <i>{news.author ? news.author : this.props.default}</i>
                   </p>
+                  <br />
+                  <br />
                   <p>{this.formatDate(news.publishedAt)}</p>
                 </div>
               </div>

@@ -60,7 +60,7 @@ class Login extends React.Component {
                                 <GoogleLogin
                                     clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
                                     render={renderProps => (
-                                        <button className="unstyled-button" onClick={renderProps.onClick} disabled={renderProps.disabled}><AwesomeButton style={{outerWidth:'100%'}} size="large" type="primary"> Sign in with Google</AwesomeButton></button>
+                                        <button className="unstyled-button" onClick={renderProps.onClick} disabled={renderProps.disabled}> Sign in with Google</button>
                                     )}
                                     buttonText="Login"
                                     onSuccess={this.onSuccessfuLogin}

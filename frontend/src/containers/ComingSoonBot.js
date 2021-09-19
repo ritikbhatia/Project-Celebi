@@ -123,9 +123,9 @@ class ComingSoonBot extends React.Component {
             </div>
           </div>
 
-          <div className="instructions">
+          {/* <div className="instructions">
             <h1>The organizations are not here yet, but they will be joining us for a sustainable future soon :D</h1>
-          </div>
+          </div> */}
           
           <div className="bb8" style={{WebkitTransform: `translateX(${droidX}px)`}}>
             <div className={'antennas ' + (toTheRight ? 'right' : '')}
