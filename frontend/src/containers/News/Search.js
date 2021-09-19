@@ -41,8 +41,9 @@ class Search extends Component {
   render() {
     return (
       <div className="">
-        <h4>Select from {this.state.count} News Outlets</h4>
-        <select value={this.state.value} onChange={this.handleChange}>
+        <h2 className="news-header">Sustainability News</h2>
+        <h3 className="news-subheader">Read from {this.state.count} News Outlets</h3>
+        <select value={this.state.value} onChange={this.handleChange} class="select">
           {this.state.data.map((outlet, i) => {
             return (
               <option key={i} value={outlet.id}>

@@ -11,12 +11,14 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 function Home() {
   return (
     <div className="App container">
-        <SideNav />
-        <Main>
-            <Header />
-            <NewPost />
-            <Posts />
-        </Main>
+      <SideNav />
+      <Main>
+        <Header />
+        <h2 className="news-header">Discussions</h2>
+        <h3 className="news-subheader">Find out how others are changing the world!</h3>
+        <NewPost />
+        <Posts />
+      </Main>
     </div>
   );
 }
