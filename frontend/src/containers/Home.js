@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import "./App.css";
 import SideNav from "./SideNav";
 import Header from "./Header";
@@ -8,17 +8,17 @@ import NewPost from "./NewPost"
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
-function Home() {
-  return (
-    <div className="App container">
-        <SideNav />
-        <Main>
-            <Header />
-            <NewPost />
-            <Posts />
-        </Main>
-    </div>
-  );
+export default class Home extends Component {
+  render() {
+      return (
+        <div className="App container">
+          <SideNav />
+          <Main>
+              <Header />
+              <NewPost />
+              <Posts />
+          </Main>
+        </div>
+      )
+  }
 }
-
-export default Home;

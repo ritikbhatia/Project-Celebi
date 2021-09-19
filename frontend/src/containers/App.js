@@ -11,6 +11,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ServeNews from "./News/ServeNews";
 import Landing from "./Landing";
 import Volunteer from "./Volunteer/Volunteer";
+import Profile from "./Profile/Profile";
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
         <Route exact path='/home' component={Home} />
         <Route exact path='/news' component={ServeNews} />
         <Route exact path='/volunteer' component={Volunteer} /> 
+        <Route exact path='/profile' component={Profile} />
       </Switch>
     </BrowserRouter>
 

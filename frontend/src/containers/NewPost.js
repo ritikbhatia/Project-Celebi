@@ -39,12 +39,8 @@ const NewPost = () => {
                 image: (new_url==""?"http://cdn.onlinewebfonts.com/svg/img_519597.png":new_url),
                 user: userData.name,
                 team: (userData.team==undefined?"#global":userData.team),
-            });
-
-            document.getElementById("new_title").value = "";
-            document.getElementById("new_url").value = "";
-
-            document.getElementById("popup").style.display = "none";
+            })
+            .then(hide());
         }
     }
     
