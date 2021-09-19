@@ -37,7 +37,7 @@ class Outlet extends Component {
   render() {
     return (
       <div className="outletSection">
-        <h4>
+        <h4 className="news-subheader">
           Outlet Description{' '}
           <span role="img" aria-label="Newspaper Emoji">
             📰

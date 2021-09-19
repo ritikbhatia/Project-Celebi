@@ -27,12 +27,15 @@
 	flex-wrap: wrap;
 	flex-direction: row;
 	justify-content: space-between;
+	
 }
 
 .content {
 	padding-top: 0;
 	width: 58%;
 	padding: 5px;
+	padding-bottom: 3vh;
+	/* padding-right: 2vh; */
 }
 
 .card {
@@ -41,7 +44,9 @@
 	width: 49%;
 	padding: 5px;
 	margin: 10px 0;
-	border-bottom: 1px solid grey;
+	/* border-radius: 10%; */
+	/* border-bottom: 1px solid grey; */
+	background-color: antiquewhite;
 }
 
 .image {
