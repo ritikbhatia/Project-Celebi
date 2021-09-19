@@ -4,6 +4,8 @@ import SideNav from "../SideNav";
 import Header from "../Header";
 import Main from "../Main";
 import CurrentTeam from "./CurrentTeam";
+import ChangeTeam from "./ChangeTeam";
+import NewTeam from "./NewTeam";
 import db from "../Firestore";
 
 function Profile () {
@@ -21,7 +23,7 @@ function Profile () {
             console.log(userData.email);
             let u = await db.collection('users').doc(userData.email).get();
             console.log(u.data());
-            if ("team" in u.data()){
+            if (u.data()["team"] != ""){
                 let t = await db.collection('teams').doc(u.data()["team"]).get();
                 console.log(t.data());
                 setTeam(t.data());
@@ -37,6 +39,8 @@ function Profile () {
             <Main>
                 <Header />
                 <CurrentTeam props={team}/>
+                <NewTeam user={userData} />
+                <ChangeTeam user={userData}/>
             </Main>
         </div>
       );
