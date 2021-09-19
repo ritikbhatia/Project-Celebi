@@ -322,14 +322,16 @@ class Map extends Component {
 				</div>
 				<label htmlFor="" style={{fontWeight:"Bolder"}}>Cityscape Metrics</label>
 
-				<Container style={{width:'100%', marginTop:"20px", display:'flex', justifyContent:'space-evenly', alignItems:'stretch'}}>
+				<Container style={{width:'100%', marginTop:"20px", display:'flex', justifyContent:'space-evenly', alignItems:'stretch', minHeight:'100vh'}}>
 					<Row width='8' style={{width:'100%', display:'flex', justifyContent:'space-evenly', alignItems:'stretch'}} >
 						<Col width='8'>
 						<label htmlFor="" style={{fontWeight:"Bolder"}}><b>One Squaremile Building and Street Footprint</b></label><br />
 						<img src={StreetFootprint} height={'180px'} width={'220px'} alt="Street Foot Print"/>
 						</Col>
 						<Col><label htmlFor="" style={{fontWeight:"Bolder"}}><b>Citywide Building Footprint</b></label><br />
-						<img src={CityFootprint} alt="City Building Footprint"/>
+						<img src={'https://i.ibb.co/Kb0Q0dm/CityFp.jpg'} height={'180px'} width={'220px'} alt="City Building Footprint"/>
+						{/* <a href="https://ibb.co/vVwrwpD"><img src="https://i.ibb.co/Kb0Q0dm/CityFp.jpg" alt="CityFp" border="0"></a> */}
+						{/* <iframe src="https://drive.google.com/file/d/1jftJ91j8ji6Z6L0Q203CsZA0Tav-0TGt/preview" width="220" height="180" allow="autoplay"></iframe> */}
 						</Col>
 					</Row>
 					<Row>
