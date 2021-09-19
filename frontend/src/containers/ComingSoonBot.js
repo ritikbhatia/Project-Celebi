@@ -93,7 +93,7 @@ class ComingSoonBot extends React.Component {
       let {speed, accelMod, droidX, mouseX, toTheRight} = this.state;
       
       return (
-        <div>
+        <div className="botDiv">
           
           {/* <div className="logo">
             <img src="http://i68.tinypic.com/iod6yh.png" />

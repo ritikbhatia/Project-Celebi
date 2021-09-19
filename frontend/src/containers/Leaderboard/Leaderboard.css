@@ -1,0 +1,19 @@
+.leaderboard_item
+{
+    /* text-align:center;
+    align-items: center;
+    padding-bottom: 15%; */
+    /* display: flex; */
+}
+
+
+.float-child{
+    /* width: 50%;
+    float: left; */
+    /* padding: 20px; */
+    /* flex:1 */
+}
+
+td,th{
+    padding: 5vw;
+}

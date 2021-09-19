@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
 .buttonContainer {
-    background-color: white;
+    /* background-color: white; */
     padding: 0.5em 1em;
-    border-radius: 5px;
-    box-shadow: -1px 0px 5px 5px #F4f5fa;
+    /* border-radius: 5px; */
+    /* box-shadow: -1px 0px 5px 5px #F4f5fa; */
+    background-color: antiquewhite;
 }
 
 button {
@@ -17,11 +18,13 @@ button {
     top: 0;
     left: 0;
     position: fixed;
-    background-color: rgba(50, 50, 50, 0.9);
+    /* background-color: rgba(50, 50, 50, 0.9); */
+    background-color: antiquewhite;
   }
   #form {
     position: absolute;
-    background-color: #f5f5f5;
+    /* background-color: #f5f5f5; */
+    background-color: antiquewhite;
     border: 1px solid #212121;
     border-radius: 2px;
     padding: 20px;
@@ -41,9 +44,11 @@ button {
     margin-top: -19px;
     width: 8%;
     height: 10%;
+    background-color: red;
   }
   .cont {
-    background-color: #e3f2fd;
+    /* background-color: #e3f2fd; */
+    background-color: antiquewhite;
     border-radius: 2px;
     padding: 20px 50px;
     width: 350px;
