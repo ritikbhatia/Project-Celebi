@@ -5,7 +5,7 @@ export default class WIP extends Component {
     render() {
         return (
             <div className="wip">
-                <p class="text">Sorry<br />Work in progress</p>
+                <p class="text">Sorry!<br />Work in progress</p>
                 <div class="container-animation">
                     <div class="bg"></div>
                     <div class="arm-left"></div>

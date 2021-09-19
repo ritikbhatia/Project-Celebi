@@ -52,7 +52,7 @@ function Volunteer() {
         <Main>
           <Header />
           <h2 className="news-header">Volunteer</h2>
-        <h3 className="news-subheader">Find opportunities to do what what you believe in</h3>
+        <h3 className="news-subheader">Find opportunities to support your local community</h3>
           {companyDetails && (
             <JobListContainer
               companyDetails={companyDetails}
