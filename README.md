@@ -1,16 +1,16 @@
-# Flask + React Project Template
+# Running the project
 
-Project template / boilerplate for a micro-service providing endpoints via Flask (Python) and a frontend via React 
+Project template / boilerplate for a micro-service providing endpoints via Flask (Python) and a frontend via React
 (JavaScript).
 
 **Table of Contents**
 
 1. [Requirements](#requirements)
-    1. [Tech Stack](#tech-stack)
+   1. [Tech Stack](#tech-stack)
 2. [Customisation](#customisation)
 3. [Installation](#installation)
 4. [Running the App](#running-the-app)
-    1. [Environment Config](#environment-config)
+   1. [Environment Config](#environment-config)
 
 ## Requirements
 
@@ -30,11 +30,11 @@ Project template / boilerplate for a micro-service providing endpoints via Flask
 
 - **React** basic framework for the frontend
 - **Redux** a global store for the frontend, used for data exchange with the API and to avoid handing down data through
-component hierarchies
+  component hierarchies
 - **Webpack** and **Babel** to transpile the frontend into a single `index.js`, which gets included by the `index.html`
 - **Plotly.JS** a Javascript adaptation of the popular Python charting library Plotly
 - **Moment.JS** the standard library for date/time handling in JavaScript
-- **S Alert** a basic notification library 
+- **S Alert** a basic notification library
 - **ESLint** and **Prettier** for linting Javascript code and auto-format
 - Custom **Basic Utilities** and **Style Mixins** (see `frontend/src/util.js` and `frontend/src/mixins.js`)
 
@@ -44,16 +44,16 @@ The following changes should be performed at the beginning of a project based on
 
 **Choose a Database**
 
-The boilerplate offers support for 2 different databases: MongoDB and MySQL. The following adaptations are required to 
+The boilerplate offers support for 2 different databases: MongoDB and MySQL. The following adaptations are required to
 pick one:
 
 - Update the `requirements.txt` and remove the database driver for the database you don't need.
-- Update the `config.py` and remove the environment variables for the database you don't need (they're prefixed with 
-`MONGO_` or `MYSQL_`).
+- Update the `config.py` and remove the environment variables for the database you don't need (they're prefixed with
+  `MONGO_` or `MYSQL_`).
 - Update the `runner.py` and potentially remove the MySQL related connection stuff, if you decide to use MongoDB.
-- Create a copy of the `.env.template` file and call it `.env`. This file will be used to load environment variables 
-like the database credentials from this file (which is also on `.gitignore`). Remove the database parameters for the 
-database you don't need
+- Create a copy of the `.env.template` file and call it `.env`. This file will be used to load environment variables
+  like the database credentials from this file (which is also on `.gitignore`). Remove the database parameters for the
+  database you don't need
 - Remove the example store of the database you _didn't_ choose from the `storage/` folder.
 
 **Create Stores**
@@ -61,29 +61,29 @@ database you don't need
 After having chosen a database, you can now start to create stores. We recommend having separate `.py` files for each
 table / collection in the `storage/` folder.
 
-The stores are initialised in the `runner.py` and references to these stores are stored in the `stores` dictionary, 
+The stores are initialised in the `runner.py` and references to these stores are stored in the `stores` dictionary,
 which allows to easily pass all database stores into other components such as API handler or data adapter components.
 Clean up the `TODO` items in the `runner.py` and remove traces of the database functions you don't need.
 
 **Remove Example API**
 
-The Flask app provides the following illustrative examples how to access a database, which should be removed to avoid 
+The Flask app provides the following illustrative examples how to access a database, which should be removed to avoid
 confusion:
 
 - `storage/example_mongo_store.py` - an example implementation of a very basic MongoDB collection
 - `storage/example_mysql_store.py` - an example implementation of a very basic MySQL table
-    - `storage/resources/tables/examples.sql` - table definition for this table
+  - `storage/resources/tables/examples.sql` - table definition for this table
 - `api/example_api.py` - example endpoints for getting and creating example entries. Uses MongoDB as example
-    - `runner.py` contains the registration of these endpoints (clean up `import` and `register_endpoints` call)
-- `frontend/src/redux` - remove the `example.js` and also remove the reference and registration of the Redux store in 
-`reducers.js`
+  - `runner.py` contains the registration of these endpoints (clean up `import` and `register_endpoints` call)
+- `frontend/src/redux` - remove the `example.js` and also remove the reference and registration of the Redux store in
+  `reducers.js`
 - `frontend/src/containers/LandingPage` - remove connection to example store (see the `@connect` section) and remove the
-dispatch of the `getExamples()` event in the `componentDidMount()` hook.
+  dispatch of the `getExamples()` event in the `componentDidMount()` hook.
 
 **Change Frontend Title**
 
 The template for the index.html is located here: `frontend/index.html`.
-Webpack will use that file and inject the script which represents the transpiled frontend. Note: the 
+Webpack will use that file and inject the script which represents the transpiled frontend. Note: the
 `templates/index.html` is created by Webpack and will be overwritten every time the frontend compiles.
 
 ## Installation
@@ -107,7 +107,7 @@ _Javascript:_
 
 ```bash
 npm install
-``` 
+```
 
 _Python:_
 
@@ -123,7 +123,7 @@ If you just want to compile the frontend once and then serve it via the backend 
 npm run build
 ```
 
-This will produce an index.js containing all the frontend code in the `/static` directory and put the index.html in the 
+This will produce an index.js containing all the frontend code in the `/static` directory and put the index.html in the
 `/templates` folder. Those 2 directories are used by the Flask app to deliver the frontend components.
 
 The backend's entry point is the script `runner.py` on the root of the project. To run the backend, simply execute:
@@ -157,11 +157,11 @@ Or
 npm run hot-client
 ```
 
-This will run the `webpack` watcher, which will observe the `/frontend/src` folder for changes and re-compile the 
-frontend when changes have occurred. 
+This will run the `webpack` watcher, which will observe the `/frontend/src` folder for changes and re-compile the
+frontend when changes have occurred.
 
-In case of compilation errors, this bash window will also tell you what is wrong 
-with your code. 
+In case of compilation errors, this bash window will also tell you what is wrong
+with your code.
 
 _Do not close this window while you're developing, or you quit the watcher._
 
